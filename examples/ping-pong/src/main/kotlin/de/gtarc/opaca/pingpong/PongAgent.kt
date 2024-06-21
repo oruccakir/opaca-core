@@ -17,7 +17,6 @@ class PongAgent: AbstractContainerizedAgent(name="pong-agent-${Random.nextInt()}
         ), Parameter("string", true)) {
             pongAction(it["request"]!!.asInt(), it["offer"]!!.asInt())
         }
-
         super.preStart()
     }
 
@@ -27,7 +26,6 @@ class PongAgent: AbstractContainerizedAgent(name="pong-agent-${Random.nextInt()}
             // listen to ping message, send offer to ping agent
             val ping = RestHelper.mapper.convertValue(it.payload, PingMessage::class.java)
             log.info("Received Ping $ping")
-
             val offer = Random.nextInt(0, 1000)
             val pong = PongMessage(ping.request, name, offer)
             log.info("Sending Pong $pong")

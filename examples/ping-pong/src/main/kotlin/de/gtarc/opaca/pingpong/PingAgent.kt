@@ -12,10 +12,11 @@ class PingAgent: AbstractContainerizedAgent(name="ping-agent") {
 
     private var lastRequest = -1
     private val offers = mutableMapOf<String, Int>()
+    private val second = 1
 
     override fun behaviour() = super.behaviour().and(act {
 
-        every(Duration.ofSeconds(5)) {
+        every(Duration.ofSeconds(second)) {
             // if already collected messages from last turn, invoke action at best Pong agent
             if (offers.isNotEmpty()) {
                 val best = offers.entries.maxBy { it.value }

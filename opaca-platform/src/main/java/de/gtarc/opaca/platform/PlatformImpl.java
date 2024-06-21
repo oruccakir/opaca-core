@@ -380,9 +380,7 @@ public class PlatformImpl implements RuntimePlatformApi {
     public List<String> getConnections() {
         return List.copyOf(connectedPlatforms.keySet());
     }
-
-
-
+    
     @Override
     public boolean disconnectPlatform(String url) throws IOException {
         url = normalizeString(url);

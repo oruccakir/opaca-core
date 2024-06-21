@@ -1,0 +1,12 @@
+{
+    "imageName": "order-container-image",
+  
+    "requires": ["inventory"],
+    "provides": [],
+  
+    "name": "Inventory-Order Example Agent Container - Order Side",
+    "version": "0.1.1",
+    "description": "One side of distributed Inventory-Order example. Order agent regularly sends broadcast message to be received by Inventory agents; Inventory agents reply directed message containing productInfo; Order agent invokes an action at the Inventory Agent that sent money and get Product",
+    "provider": "DAI-Lab"
+  }
+  
